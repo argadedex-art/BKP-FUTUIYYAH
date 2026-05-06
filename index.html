@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Futuiyyahbkp</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 50px;
+      background-color: #020617;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: #38bdf8;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px;
+    }
+
+    .card {
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background-color: #334155;
+    }
+
+    .page {
+      display: none;
+      padding: 50px;
+      text-align: center;
+    }
+
+    /* WA FLOAT */
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 24px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        padding: 10px 20px;
+      }
+
+      .hero {
+        padding: 60px 15px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2>FutuiyyahBKP</h2>
+    <ul>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>SELAMAT DATANG DI BKP FUTUIYYAH</h1>
+    <p>DONASI VIDIO VIRALL</p>
+    <button onclick="scrollKontak()">Hubungi Saya</button>
+  </section>
+
+  <!-- CARD -->
+  <section class="card-container">
+    <div class="card" onclick="showPage('website')">
+      <h3>JAV MOVIE</h3>
+      <p>Lihat vidio jepang viral</p>
+    </div>
+
+    <div class="card" onclick="showPage('bisnis')">
+      <h3>LOKAL</h3>
+      <p>Bokep viral indo</p>
+    </div>
+
+    <div class="card" onclick="showPage('masa')">
+      <h3>JILBAB</h3>
+      <p>vidio jilbab indo</p>
+    </div>
+  </section>
+
+  <!-- HALAMAN WEBSITE -->
+  <div id="website" class="page">
+    <h1>JAV MOVIE</h1>
+    <p>maaf belum ada stok vidio bisa donasi vidio ke admin ya</p>
+    <button onclick="back()">Kembali</button>
+  </div>
+
+  <!-- HALAMAN BISNIS -->
+  <div id="bisnis" class="page">
+    <h1>VIRAL INDO TERBARU</h1>
+    <p>maaf belum ada stok vidio bisa donasi vidio ke admin ya</p>
+    <button onclick="back()">Kembali</button>
+  </div>
+
+  <!-- HALAMAN MASA DEPAN -->
+  <div id="masa" class="page">
+    <h1>JILBAB VIRAL INDO</h1>
+    <p>maaf belum ada stok vidio bisa donasi vidio ke admin ya</p>
+    <button onclick="back()">Kembali</button>
+  </div>
+
+  <!-- TOMBOL WA MELAYANG -->
+  <a href="https://wa.me/6282220696123?text=Halo%20admin%20saya%20mau%20donasi%20vidio" class="wa-float" target="_blank">
+    💬
+  </a>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelector('.hero').style.display = 'none';
+      document.querySelector('.card-container').style.display = 'none';
+
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+    }
+
+    function back() {
+      document.querySelector('.hero').style.display = 'block';
+      document.querySelector('.card-container').style.display = 'flex';
+
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    }
+
+    function scrollKontak() {
+      window.open("https://wa.me/6282220696123", "_blank");
+    }
+  </script>
+
+</body>
+</html>
